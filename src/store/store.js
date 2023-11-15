@@ -1,8 +1,9 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import produceReducer from './produce'
-
+import {cartReducer} from './cart.js';
 const rootReducer = combineReducers({
-    produce: produceReducer
+    produce: produceReducer,
+    cart:cartReducer
 });
 
 let enhancer;
@@ -19,5 +20,5 @@ if (import.meta.env.MODE !== "production") {
 const configureStore = (preloadedState) => {
     return createStore(rootReducer, preloadedState, enhancer);
   };
-  
+
   export default configureStore;
