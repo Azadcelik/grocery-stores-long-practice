@@ -1,10 +1,15 @@
 import ProduceDetails from './ProduceDetails';
 import './ProduceList.css';
+import { useSelector } from 'react-redux';
 
 function ProduceList() {
-  const produce = {};
+  let produce = {};
+
+   produce = useSelector(state => state.produce);
+   console.log
 
   const produceArr = Object.values(produce);
+
 
   return (
     <>
